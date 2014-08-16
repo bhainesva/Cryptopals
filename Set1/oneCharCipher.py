@@ -1,8 +1,8 @@
 import string
 import sys
-import 2FixedXOR
+import fixedXOR
 
-hexStrXOR = 2FixedXOR.hexStrXOR
+hexStrXOR = fixedXOR.hexStrXOR
 
 def createKey(a, length):
 	if len(a) == 1:
@@ -17,8 +17,6 @@ def freq(char, inStr):
 		if inStr[i:i+2]==char:
 			count += 1.0
 	return count/(len(inStr)/2)
-
-
 
 def createKeys():
 	keys = []
@@ -41,4 +39,7 @@ def decipher(ct, keys):
 
 	return message.decode('hex')
 
-
+if __name__ == "__main__":
+        ct = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
+        keys = createKeys()
+        print decipher(ct, keys)
