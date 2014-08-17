@@ -18,10 +18,10 @@ def freq(char, inStr):
 			count += 1.0
 	return count/(len(inStr)/2)
 
-def createKeys():
+def createKeys(length):
 	keys = []
 	for i in range(128):
-		k = createKey(format(i, 'x'), len(ct))
+		k = createKey(format(i, 'x'), length)
 		keys.append(k)
 	return keys
 
@@ -41,5 +41,5 @@ def decipher(ct, keys):
 
 if __name__ == "__main__":
         ct = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
-        keys = createKeys()
+        keys = createKeys(len(ct))
         print decipher(ct, keys)
